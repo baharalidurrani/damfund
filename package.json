@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://gitlab.com/baharalidurrani/damfund/issues"
   },
-  "homepage": "https://gitlab.com/baharalidurrani/damfund#readme"
+  "homepage": "https://gitlab.com/baharalidurrani/damfund#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
