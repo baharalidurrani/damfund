@@ -3,9 +3,7 @@ const Router = express.Router();
 const Home = require('../Controllers/HomeController');
 
 //Home route
-Router.get('/', (req, res) => {
-    res.send("hello...");
-});
+Router.get('/', Home.get);
 
 //////////////////not found
 Router.all('*', function (req, res) {
