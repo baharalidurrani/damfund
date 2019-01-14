@@ -1,3 +1,8 @@
 exports.get = (req, res) => {
-    res.send("hello world");
+    crawl(req, res);
+    // res.send("hello world");
 };
+
+crawl = (req, res) => {
+
+}
