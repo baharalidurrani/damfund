@@ -4,21 +4,26 @@ async function crawl() {
         // dumpio: true,
         headless: true
     });
+
     const page = await browser.newPage();
     await page.goto('http://scp.gov.pk/popup.aspx');
 
-    await page.screenshot({
-        path: 'example.png'
+    const dataPromise = await page.evaluate(() => {
+        //these are the real-time variables present on the:
+        //http://scp.gov.pk/popup.aspx
+        //to check,
+        //enter the following two commands in the DevTools REPL Console
+        //console.log(chart.data.labels);
+        //console.log(chart.data.datasets[0].data);
+        return Promise.resolve({
+            dates: chart.data.labels,
+            funds: chart.data.datasets[0].data
+        });
     });
-
-    const dataPromise = {
-        dates: [],
-        funds: []
-    }
-    //////////////logic
 
     await browser.close();
     return dataPromise;
 }
 
+//always use this crawl method with try catch
 module.exports.crawl = crawl;
