@@ -1,7 +1,7 @@
 async function crawl() {
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch({
-        // dumpio: true,
+        dumpio: true,
         headless: true
     });
 
