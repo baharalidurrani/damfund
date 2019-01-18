@@ -3,6 +3,7 @@ exports.get = (req, res) => {
     const scrapPromise = scraper.crawl();
 
     Promise.resolve(scrapPromise).then((data) => {
-        res.send(data);
+        console.log(data);
+        res.json(data);
     });
 };
