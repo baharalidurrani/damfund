@@ -5,6 +5,7 @@ exports.get = (req, res) => {
     Promise.resolve(scrapPromise).then((data) => {
         console.log("Total entries: " + data.dates.length);
         console.log("Total Funds: " + data.funds[data.funds.length - 1]);
-        res.send(data);
+
+        res.send("Total entries: " + data.dates.length + "Total Funds: " + data.funds[data.funds.length - 1]);
     });
 };
