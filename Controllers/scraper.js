@@ -1,7 +1,11 @@
 async function crawl() {
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch({
+        //for puppeteer-heroku-buildpack
+        args: ['--no-sandbox'],
+        //for piping chromium console output to this NodeJS console
         dumpio: true,
+        //for chromium GUI turning ON/Off
         headless: true
     });
 
