@@ -25,7 +25,7 @@ async function crawl() {
         });
     });
 
-    await browser.close();
+    browser.close();
     return dataPromise;
 }
 
