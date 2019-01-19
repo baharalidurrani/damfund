@@ -6,6 +6,6 @@ exports.get = (req, res) => {
         console.log("Total entries: " + data.dates.length);
         console.log("Total Funds: " + data.funds[data.funds.length - 1]);
 
-        res.send("Total entries: " + data.dates.length + "Total Funds: " + data.funds[data.funds.length - 1]);
+        res.send("Total entries: " + data.dates.length + ' ' + "Total Funds: " + data.funds[data.funds.length - 1]);
     });
 };
