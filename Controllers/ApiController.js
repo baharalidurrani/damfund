@@ -1,18 +1,19 @@
 exports.get = (req, res) => {
     const scraper = require('./scraper');
-    const scrapPromise = scraper.crawl();
-
-    Promise.resolve(scrapPromise).then((data) => {
+    scraper.crawl().then((data) => {
         console.log("Total entries: " + data.dates.length);
         console.log("Total Funds: " + data.funds[data.funds.length - 1]);
 
         res.json(data);
+
     }).catch((e) => {
-        console.log('\n***** Problem with scrapper...\n');
+        console.log('\n***** Error occured while retriving data from the source...');
         console.log(e);
+        console.log('***** Error occured while retriving data from the source...\n');
+
         res.json({
-            dates: 'problem with scrapper',
-            funds: 'problem with scrapper'
+            dates: 'problem with the data source',
+            funds: 'problem with the data source'
         });
     });
 };
