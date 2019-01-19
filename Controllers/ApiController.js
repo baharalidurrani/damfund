@@ -7,5 +7,12 @@ exports.get = (req, res) => {
         console.log("Total Funds: " + data.funds[data.funds.length - 1]);
 
         res.json(data);
+    }).catch((e) => {
+        console.log('\n***** Problem with scrapper...\n');
+        console.log(e);
+        res.json({
+            dates: 'problem with scrapper',
+            funds: 'problem with scrapper'
+        });
     });
 };
