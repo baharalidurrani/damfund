@@ -24,6 +24,7 @@
   },
   "homepage": "https://gitlab.com/baharalidurrani/damfund#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "puppeteer": "^1.11.0"
   }
