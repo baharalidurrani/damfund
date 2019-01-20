@@ -14,6 +14,9 @@ exports.get = (req, res) => {
         console.log(e);
         console.log('***** Error occured while retriving data from the source...\n');
 
-        res.send('***** Error occured while retriving data from the source...');
+        res.render('Home.ejs', {
+            dates: 'problem with the data source',
+            funds: 'problem with the data source'
+        });
     });
 };
